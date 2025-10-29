@@ -1,0 +1,292 @@
+/* Sidebar Styles - FCGB Design */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -350px;
+  width: 350px;
+  height: 100vh;
+  background-color: #D90404;
+  z-index: 1000;
+  transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  /* Ocultar barras de scroll */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+/* Ocultar scrollbar en WebKit browsers (Chrome, Safari, Edge) */
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-open {
+  left: 0;
+}
+
+/* Header del sidebar */
+.sidebar-header {
+  padding: 20px 25px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-image {
+  width: 150px;
+  height: auto;
+  max-height: 100px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* Navegación */
+.sidebar-nav {
+  flex: 1;
+  padding: 20px 0;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 2px dashed #F28705;
+  position: relative;
+  margin-bottom: 2px;
+}
+
+.sidebar-item:hover {
+  color: #ed120a;
+  background: #ffffff;
+  transform: translateX(8px);
+}
+
+.sidebar-item.active {
+  background: #ffffff;
+  color: #ed120a;
+  border-left: 4px solid #db0505;
+}
+
+.sidebar-item-content {
+  flex: 1;
+}
+
+.sidebar-item-title {
+  font-size: 24px;
+  font-weight: 700;
+    color: #F28705;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1px;
+}
+
+.sidebar-item-line {
+  width: 100%;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    #F28705 0,
+    #F28705 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  margin-top: 6px;
+}
+
+.sidebar-item-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.sidebar-item:hover .sidebar-item-icon {
+  transform: scale(1.1);
+}
+
+/* Estilos para el icono de flecha SVG */
+.arrow-icon {
+  width: 35px;
+  height: 35px;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  transition: all 0.3s ease;
+}
+
+.sidebar-item:hover .arrow-icon {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(94%) saturate(7466%) hue-rotate(3deg) brightness(90%) contrast(117%);
+ 
+}
+
+/* Sección especial - Shop */
+.sidebar-shop {
+  position: relative;
+  margin: 15px 0;
+}
+
+.shop-label {
+  position: absolute;
+  top: -8px;
+  left: 25px;
+  background: #F28705;
+  color: #ffffff;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 900;
+  z-index: 1;
+  letter-spacing: 0.5px;
+}
+
+.sidebar-item.special {
+  border-bottom: 2px dashed #F28705;
+}
+
+.sidebar-item.special .sidebar-item-title {
+  font-size: 26px;
+  color: #F28705;
+  font-weight: 900;
+}
+
+.shop-icon {
+  background: #F28705 !important;   
+  font-size: 20px;
+}
+
+/* Botones de acción */
+.sidebar-actions {
+  padding: 15px;
+  border-top: 1px solid rgba(242, 135, 5, 0.3);
+}
+
+.action-btn {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.action-btn.primary {
+  border-color:#D90404;
+  background: #D90404;
+  color: #ffffff;
+}
+
+.action-btn.primary:hover {
+  background: #ffffff;
+  color:#db0505;
+  border-color:#F28705;
+  transform: translateY(-2px);
+
+}
+
+.action-btn.secondary {
+  background: #ffffff;
+  color: #D90404;
+}
+
+.action-btn.secondary:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  font-size: 16px;
+}
+
+.sidebar-footer-text {
+  text-align: center;
+  color: #F28705;
+  font-size: 13px;
+  margin: 12px 0 0;
+  font-style: italic;
+  font-weight: 500;
+}
+
+
+
+/* Footer Image */
+.sidebar-footer-image {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.footer-banner-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    left: -100%;
+  }
+  
+  .sidebar-open {
+    left: 0;
+  }
+  
+  .sidebar-header {
+    padding: 25px 20px 20px;
+  }
+  
+  .logo-image {
+    width: 120px;
+    max-height: 80px;
+  }
+  
+  .sidebar-item {
+    padding: 15px 20px;
+  }
+  
+  .sidebar-item-title {
+    font-size: 22px;
+  }
+  
+  .sidebar-actions {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-item-title {
+    font-size: 20px;
+  }
+  
+  .logo-image {
+    width: 100px;
+    max-height: 70px;
+  }
+  
+  .sidebar {
+    width: 300px;
+    left: -300px;
+  }
+}
